@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>中秋星空留言</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f3f3f3; padding: 2rem; }
+    form { max-width: 500px; margin: 0 auto; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input, textarea, button { width: 100%; padding: 0.75rem; margin-top: 1rem; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc; }
+    button { background-color: #005655; color: white; border: none; cursor: pointer; }
+    button:hover { background-color: #007777; }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">🌕 中秋星空留言表單</h2>
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="您的姓名" required>
+    <input type="email" name="email" placeholder="您的 Email" required>
+    <textarea name="message" placeholder="想說的話..." required></textarea>
+    <button type="submit">送出留言</button>
+  </form>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby4_D9uXjPT8zoADPgFTsGFbXlU7sps_lQUcHPuCeCVlNVQ7e73bBBtC91sUtjtkrmC/exec';
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+
+      fetch(scriptURL, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(res => {
+        alert("留言已送出，感謝您的分享！");
+        document.getElementById('contact-form').reset();
+      })
+      .catch(err => alert("發生錯誤：" + err));
+    });
+  </script>
+
+</body>
+</html>
