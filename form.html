@@ -24,25 +24,26 @@
   </form>
 
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycby4_D9uXjPT8zoADPgFTsGFbXlU7sps_lQUcHPuCeCVlNVQ7e73bBBtC91sUtjtkrmC/exec';
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData.entries());
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyB5ktVs5lP8jk-SrI0FGBQIc3UeTJYvoHZBD2kfE-0kPIIA05LcJAe77POQ8IxJ3b7/exec';
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
 
-      fetch(scriptURL, {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(res => {
-        alert("留言已送出，感謝您的分享！");
-        document.getElementById('contact-form').reset();
-      })
-      .catch(err => alert("發生錯誤：" + err));
-    });
+  fetch(scriptURL, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(res => res.text())
+  .then(responseText => {
+    alert("伺服器回應：" + responseText);
+    document.getElementById('contact-form').reset();
+  })
+  .catch(err => alert("發生錯誤：" + err));
+});
   </script>
 
 </body>
