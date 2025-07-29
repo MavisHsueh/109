@@ -772,6 +772,7 @@ if (window.scrollY > 50) {
   </div>
 </section>
 
+
 <!-- Google Apps Script -->
 <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbxOQhQZDdmxVYHCTcDQxgKiYru0nUFGRVwlQPiqhJhxd4SR78iQzyXbwIfrEiZcDEBV/exec';
@@ -796,25 +797,8 @@ if (window.scrollY > 50) {
   });
 </script>
 
-<!-- 回到最上方按鈕 -->
-<button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-        class="fixed bottom-6 right-6 z-50 bg-[#66665f] hover:bg-[#005655] text-white text-sm px-4 py-2 rounded-full shadow-md transition-all duration-300">
-↑
-</button>
-
   </div>
 </footer>
-
-<!-- Dot Navigation 無障礙優化 -->
-<nav class="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 space-y-4" aria-label="頁面快速導覽">
-  <a href="#home" class="block w-4 h-4 rounded-full bg-gray-500 hover:bg-white transition focus:outline-none focus:ring-2 focus:ring-cyan-400" title="首頁" aria-label="前往首頁"></a>
-  <a href="#about" class="block w-4 h-4 rounded-full bg-gray-500 hover:bg-white transition focus:outline-none focus:ring-2 focus:ring-cyan-400" title="公設" aria-label="前往公設"></a>
-  <a href="#hot-project-2" class="block w-4 h-4 rounded-full bg-gray-500 hover:bg-white transition focus:outline-none focus:ring-2 focus:ring-cyan-400" title="建材" aria-label="前往建材"></a>
-  <a href="#classic-projects" class="block w-4 h-4 rounded-full bg-gray-500 hover:bg-white transition focus:outline-none focus:ring-2 focus:ring-cyan-400" title="環境" aria-label="前往環境"></a>
-  <a href="#photos" class="block w-4 h-4 rounded-full bg-gray-500 hover:bg-white transition focus:outline-none focus:ring-2 focus:ring-cyan-400" title="照片" aria-label="前往照片"></a>
-  <a href="#videos" class="block w-4 h-4 rounded-full bg-gray-500 hover:bg-white transition focus:outline-none focus:ring-2 focus:ring-cyan-400" title="照片" aria-label="前往影片"></a>
-  <a href="#service" class="block w-4 h-4 rounded-full bg-gray-500 hover:bg-white transition focus:outline-none focus:ring-2 focus:ring-cyan-400" title="連絡" aria-label="前往連絡"></a>
-</nav>
 
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -1031,5 +1015,86 @@ if (window.scrollY > 50) {
     }
   });
 </script>
+
+<!-- 右側導覽＋聯絡按鈕 -->
+<!-- 桌機版：右下角聯絡按鈕 + 回到最上方 -->
+<div class="hidden md:flex fixed right-4 bottom-6 flex-col items-end space-y-3 z-50">
+
+  <!-- 地址 -->
+  <a href="https://maps.app.goo.gl/VhcbmxZQhwpLhcrv7" target="_blank"
+     class="w-12 h-12 rounded-full bg-[#2c3e4e] flex items-center justify-center shadow-lg hover:scale-110 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="white">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 21s8-5.686 8-11c0-4.418-3.582-8-8-8s-8 3.582-8 8c0 5.314 8 11 8 11z" />
+    </svg>
+  </a>
+
+  <!-- LINE -->
+  <a href="https://line.me/ti/p/你的LINE-ID" target="_blank"
+     class="w-12 h-12 rounded-full bg-[#2c3e4e] flex items-center justify-center shadow-lg hover:scale-110 transition">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg"
+         alt="LINE" class="w-6 h-6 object-contain" />
+  </a>
+
+  <!-- 電話 -->
+  <a href="tel:0912345678"
+     class="w-12 h-12 rounded-full bg-[#2c3e4e] flex items-center justify-center shadow-lg hover:scale-110 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="white">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 5l2-2 4 4-2 2a16 16 0 006 6l2-2 4 4-2 2c-2.25 2.25-10-4.5-12-8z" />
+    </svg>
+  </a>
+
+  <!-- 回到最上方 -->
+  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+          class="w-12 h-12 rounded-full bg-[#2c3e4e] flex items-center justify-center shadow-lg hover:scale-110 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+    </svg>
+  </button>
+</div>
+
+<!-- 手機版：底部固定按鈕列（水平） -->
+<div class="md:hidden fixed bottom-0 left-0 w-full bg-[#2c3e4e] flex justify-around items-center py-2 z-50 shadow-xl">
+  <!-- 回到最上方 -->
+  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+          class="w-10 h-10 flex items-center justify-center">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- 地址 -->
+  <a href="https://maps.app.goo.gl/VhcbmxZQhwpLhcrv7" target="_blank"
+     class="w-10 h-10 flex items-center justify-center">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 21s8-5.686 8-11c0-4.418-3.582-8-8-8s-8 3.582-8 8c0 5.314 8 11 8 11z" />
+    </svg>
+  </a>
+
+  <!-- LINE -->
+  <a href="https://line.me/ti/p/你的LINE-ID" target="_blank"
+     class="w-10 h-10 flex items-center justify-center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg"
+         alt="LINE" class="w-6 h-6 object-contain" />
+  </a>
+
+  <!-- 電話 -->
+  <a href="tel:0912345678"
+     class="w-10 h-10 flex items-center justify-center">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 5l2-2 4 4-2 2a16 16 0 006 6l2-2 4 4-2 2c-2.25 2.25-10-4.5-12-8z" />
+    </svg>
+  </a>
+</div>
+
+
+
 </body>
 </html>
