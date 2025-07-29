@@ -31,6 +31,21 @@
     }
   </script>
 
+<style>
+  @media (max-width: 768px) {
+    h1, h2, h3 {
+      font-size: 1.5rem !important; /* 約為 text-2xl */
+      line-height: 2rem !important;
+    }
+
+    .text-4xl, .text-5xl, .text-6xl {
+      font-size: 1.5rem !important;
+      line-height: 2rem !important;
+    }
+  }
+</style>
+
+
   <!-- AOS Animate On Scroll -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -348,8 +363,7 @@ if (window.scrollY > 50) {
 
 <!-- 建材 Section --->
 <section id="hot-project-2"
-         class="relative w-full h-screen text-white px-6 flex items-center overflow-hidden">
-
+         class="relative w-full min-h-screen text-white px-6 pb-20 flex items-center overflow-hidden">
   <!-- 背景輪播容器 -->
   <div class="absolute inset-0 z-0">
     <div id="slider"
@@ -361,13 +375,15 @@ if (window.scrollY > 50) {
   <div class="absolute inset-0 bg-black/40 z-10"></div>
 
   <!-- 文字內容區塊 -->
-  <div class="relative z-20 text-left w-full max-w-4xl ml-auto mr-auto"
+  <div class="relative z-20 text-left w-full max-w-4xl mx-auto"
        data-aos="fade-up" data-aos-duration="1000">
     <p class="uppercase text-sm font-semibold text-gray-400">建材 Materials</p><br>
     <h2 class="text-4xl md:text-5xl font-bold mb-4 font-farsion-serif">
       建材設備規劃完善
     </h2>
-    <p class="text-lg text-white/90 mb-6">本案採鋼筋混凝土結構、外牆二丁掛建材，並規劃智慧宅系統（如 RFID、電子鎖、空氣品質監測）與嚴謹無明火設計，提升居家安全與舒適度。</p>
+    <p class="text-lg text-white/90 mb-6">
+      本案採鋼筋混凝土結構、外牆二丁掛建材，並規劃智慧宅系統（如 RFID、電子鎖、空氣品質監測）與嚴謹無明火設計，提升居家安全與舒適度。
+    </p>
     <a href="https://www.everhome.com.tw/EssentialContent.php?ID=1056&secureChk=df2096efa4c385f4fbe721fb25eddf3b&pageParam=pn=1" target="_blank"
        class="inline-block px-6 py-3 border border-white text-white hover:bg-white hover:text-[#005655] transition-all duration-300 rounded-full font-semibold shadow-md hover:shadow-xl"
        data-aos="zoom-in" data-aos-delay="300">
@@ -377,7 +393,7 @@ if (window.scrollY > 50) {
 </section>
 
 <!-- 環境 Section --->
-<section id="classic-projects" class="bg-[#eeeeee] text-[#6B6B6B] h-screen px-0 w-full flex flex-col justify-center">
+<section id="classic-projects" class="bg-[#eeeeee] text-[#6B6B6B] min-h-screen px-0 w-full py-24 flex flex-col justify-center">
   <!-- 標題 -->
   <div class="text-center mb-12 px-6" data-aos="fade-up" data-aos-duration="1000">
     <br>
@@ -440,7 +456,6 @@ if (window.scrollY > 50) {
 
   </div>
 </section>
-
 
 
 <!-- 照片 Section（共22張圖片）-->
