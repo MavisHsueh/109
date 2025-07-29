@@ -23,28 +23,28 @@
     <button type="submit">送出留言</button>
   </form>
 
-  <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxkYzyGlU1gyP1k0f4MVy9Cw6SNWGo7lw39JhlAg4oMXIfY2JZmhgAKTgmNXa8HqwyXPA/exec';
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const formData = new FormData(this);
-  const data = Object.fromEntries(formData.entries());
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxkYzyGlU1gyP1k0f4MVy9Cw6SNWGo7lw39JhlAg4oMXIfY2JZmhgAKTgmNXa8HqwyXPA/exec';
 
-  fetch(scriptURL, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  .then(res => res.text())
-  .then(responseText => {
-    alert("伺服器回應：" + responseText);
-    document.getElementById('contact-form').reset();
-  })
-  .catch(err => alert("發生錯誤：" + err));
-});
-  </script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
 
+    const form = document.forms['contact-form'];
+    const formData = new FormData(form);
+
+    fetch(scriptURL, {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(responseText => {
+      alert("伺服器回應：" + responseText);
+      form.reset();
+    })
+    .catch(error => {
+      alert("發生錯誤：" + error);
+    });
+  });
+</script>
 </body>
 </html>
