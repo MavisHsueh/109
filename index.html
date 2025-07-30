@@ -46,6 +46,15 @@
     }
   }
 
+
+* {
+  box-sizing: border-box;
+}
+html, body {
+  overflow-x: hidden;
+}
+
+
 /* 隱藏滾動條 */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
@@ -272,7 +281,7 @@ if (window.scrollY > 50) {
   <!-- 背景 YouTube 影片 -->
   <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
     <iframe
-      class="absolute top-0 left-0 w-[120vw] h-[120vh] scale-[1.2] object-cover"
+      class="absolute top-0 left-0 w-[100vw] h-[100vh] scale-[1.2] object-cover"
       src="https://www.youtube.com/embed/WnmNO4CNz5M?autoplay=1&mute=1&loop=1&playlist=WnmNO4CNz5M&controls=0&modestbranding=1&rel=0&showinfo=0"
       title="背景影片"
       frameborder="0"
@@ -715,8 +724,8 @@ if (window.scrollY > 50) {
 
   <!-- 背景 YouTube 影片 -->
   <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-    <iframe
-      class="absolute top-0 left-0 w-[120vw] h-[120vh] scale-[1.2] object-cover"
+   <iframe
+  class="absolute top-0 left-0 w-[100vw] h-[100vh] object-cover"
       src="https://www.youtube.com/embed/4ZOOC6_VyUo?autoplay=1&mute=1&loop=1&playlist=4ZOOC6_VyUo&controls=0&modestbranding=1&rel=0&showinfo=0"
       title="背景影片"
       frameborder="0"
