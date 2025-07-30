@@ -719,20 +719,22 @@ if (window.scrollY > 50) {
 </section>
 
 
-<!--影片-->
-<section id="videos" class="w-screen h-screen relative text-white overflow-hidden">
+<!--影片 Section -->
+<section id="videos" class="relative w-screen h-screen overflow-hidden text-white">
 
   <!-- 背景 YouTube 影片 -->
-  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-   <iframe
-  class="absolute top-0 left-0 w-[100vw] h-[100vh] object-cover"
-      src="https://www.youtube.com/embed/4ZOOC6_VyUo?autoplay=1&mute=1&loop=1&playlist=4ZOOC6_VyUo&controls=0&modestbranding=1&rel=0&showinfo=0"
-      title="背景影片"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen
-      loading="lazy">
-    </iframe>
+  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+    <div class="absolute inset-0 -z-10 w-full h-full">
+      <iframe
+        class="absolute top-0 left-0 w-[120vw] h-[120vh] -translate-x-[10vw] -translate-y-[10vh]"
+        src="https://www.youtube.com/embed/-l1lVXeq70Q?autoplay=1&mute=1&loop=1&playlist=-l1lVXeq70Q&controls=0&modestbranding=1&rel=0&showinfo=0"
+        title="背景影片"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
   </div>
 
   <!-- 半透明遮罩 -->
@@ -754,6 +756,7 @@ if (window.scrollY > 50) {
     </div>
   </div>
 </section>
+
 
 <!-- 連絡 Section（改為銷售資訊 + 留言表單） -->
 <section id="service" class="relative bg-[#eeeeee] py-28 px-6 text-[#2c3e4e] -mt-1">
@@ -1050,14 +1053,14 @@ if (window.scrollY > 50) {
   </a>
 
   <!-- LINE -->
-  <a href="https://line.me/ti/p/你的LINE-ID" target="_blank"
+  <a href="https://line.me/ti/p/BbQVkeyLGS" target="_blank"
      class="w-12 h-12 rounded-full bg-[#2c3e4e] flex items-center justify-center shadow-lg hover:scale-110 transition">
     <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg"
          alt="LINE" class="w-6 h-6 object-contain" />
   </a>
 
   <!-- 電話 -->
-  <a href="tel:0912345678"
+  <a href="tel:0975203507"
      class="w-12 h-12 rounded-full bg-[#2c3e4e] flex items-center justify-center shadow-lg hover:scale-110 transition">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="white">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
