@@ -289,18 +289,30 @@ if (window.scrollY > 50) {
 <!-- 首頁 Section -->
 <section id="home" class="relative min-h-screen w-full overflow-hidden flex items-center justify-center text-center">
 
-  <!-- 背景 YouTube 影片 -->
-  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-<iframe
-  class="absolute top-0 left-0 w-full h-full object-left-top object-cover md:w-[100vw] md:h-[100vh] md:scale-[1.2]"
-  src="https://www.youtube.com/embed/CyGtYTm0_7g?autoplay=1&mute=1&loop=1&playlist=CyGtYTm0_7g&controls=0&modestbranding=1&rel=0&showinfo=0"
-  title="背景影片"
-  frameborder="0"
-  allow="autoplay; encrypted-media"
-  allowfullscreen
-  loading="lazy">
-</iframe>
+  <!-- 背景影片：桌機版 -->
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none hidden md:block">
+    <iframe
+      class="absolute top-0 left-0 w-full h-full object-left-top object-cover md:w-[100vw] md:h-[100vh] md:scale-[1.2]"
+      src="https://www.youtube.com/embed/CyGtYTm0_7g?autoplay=1&mute=1&loop=1&playlist=CyGtYTm0_7g&controls=0&modestbranding=1&rel=0&showinfo=0"
+      title="背景影片桌機版"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
 
+  <!-- 背景影片：行動版（滿版強制填滿） -->
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none md:hidden">
+    <iframe
+      class="absolute top-0 left-0 w-[120vw] h-[120vh] -translate-x-[10vw] -translate-y-[10vh]"
+      src="https://www.youtube.com/embed/IdD2CcA7C1U?autoplay=1&mute=1&loop=1&playlist=IdD2CcA7C1U&controls=0&modestbranding=1&rel=0&showinfo=0"
+      title="背景影片行動版"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
   </div>
 
   <!-- LOGO 遮罩 -->
@@ -322,6 +334,7 @@ if (window.scrollY > 50) {
     </h2>
   </div>
 </section>
+
 
 
 <!-- 公設 -->
